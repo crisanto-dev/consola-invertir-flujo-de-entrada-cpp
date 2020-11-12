@@ -1,20 +1,41 @@
 // invertir-flujo-de-entrada-cpp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Autor: Cristian Antonio Escalante Hernandez
+// Github: crisanto-dev
+// 11/11/2020
+// Problema: Escriba un programa que invierta la entrada de flujo pedida al usuario
 
 #include <iostream>
-
+#include <string>
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+	cout << "Autor: Cristian Antonio Escalante Hernandez\n";
+	cout << "Github: crisanto-dev\n";
+	cout << "Problema: Escriba un programa que invierta la entrada de flujo pedida al usuario\n";
+
+	string cadena, texto_invertido = "";
+	bool bandera = true;
+
+	do
+	{
+		cout << "Escriba algo: ";
+		getline(cin, cadena);
+		if (cadena != "")
+			bandera = false;
+		else 
+			cout << "No se acepta entradas vacias\n";
+
+
+	} while (bandera);
+
+	for (int i = cadena.size(); i >= 0; i--)
+	{
+		texto_invertido += cadena[i];
+	}
+
+	cout << "El texto invertido es: " << texto_invertido << "\n";
+	cout << "Fin del programa";
+	system("PAUSE");
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
